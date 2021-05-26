@@ -36,6 +36,7 @@ export const LessMess = (props) => {
       <header>
         <img src="../imgs/logo.svg"></img>
         <h1>LessMess!</h1>
+        <p>Items I no longer need</p>
       </header>
 
       <table>
@@ -170,7 +171,7 @@ export const LessMess = (props) => {
         </div>
 
         <button type="button" onClick={addItem}>
-          Add Item
+          Less Mess...
         </button>
       </form>
     </body>
