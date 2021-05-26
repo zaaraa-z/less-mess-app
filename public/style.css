@@ -1,0 +1,45 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(56, 56, 56);
+  background-color: #ffccd9;
+}
+
+header {
+  margin: 50px auto 25px auto;
+  text-align: center;
+}
+
+img {
+  display: inline-block;
+  height: 45px;
+}
+
+h1 {
+  display: inline-flex;
+  vertical-align: top;
+  margin: 0;
+  margin-left: 10px;
+  border-bottom: solid 2px white;
+}
+
+table {
+  margin: auto;
+}
+
+form {
+  border-radius: 20px;
+  background-color: #fdfaff;
+  margin: 30px auto;
+  padding: 30px;
+  width: 50%;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 20px;
+  color: #7e082f;
+}
+.input-block {
+  margin: 5px 0;
+}

@@ -12,6 +12,7 @@ export const LessMess = (props) => {
     likedItBecause: '',
     more: '',
   });
+  const [newItems, setNewItems] = useState(props.items.concat());
 
   const change = (e) => {
     SetItemForm({
@@ -21,11 +22,19 @@ export const LessMess = (props) => {
     });
   };
 
-  console.log(itemForm);
+  const addItem = () => {
+    setNewItems(
+      newItems.concat({
+        ...itemForm,
+        id: Math.max(...newItems.map((c) => c.id)) + 1,
+      })
+    );
+  };
 
   return (
-    <>
+    <body>
       <header>
+        <img src="../imgs/logo.svg"></img>
         <h1>LessMess!</h1>
       </header>
 
@@ -46,7 +55,7 @@ export const LessMess = (props) => {
         </thead>
 
         <tbody>
-          {props.items.map((item) => (
+          {newItems.map((item) => (
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.item}</td>
@@ -64,7 +73,7 @@ export const LessMess = (props) => {
       </table>
 
       <form>
-        <div>
+        <div className="input-block">
           <label htmlFor="item-input">Item</label>
           <input
             type="text"
@@ -74,7 +83,7 @@ export const LessMess = (props) => {
             name="item"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="material-input">Material</label>
           <input
             type="text"
@@ -84,7 +93,7 @@ export const LessMess = (props) => {
             name="material"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="color-input">Color</label>
           <input
             type="text"
@@ -94,7 +103,7 @@ export const LessMess = (props) => {
             name="color"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="size-input">Size</label>
           <input
             type="text"
@@ -104,7 +113,7 @@ export const LessMess = (props) => {
             name="size"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="quality-select">Quality</label>
           <select
             id="quality-select"
@@ -119,7 +128,7 @@ export const LessMess = (props) => {
             <option>bad</option>
           </select>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="goodFor-input">Good for</label>
           <input
             type="text"
@@ -129,7 +138,7 @@ export const LessMess = (props) => {
             name="goodFor"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="date-input">Date</label>
           <input
             type="number"
@@ -139,7 +148,7 @@ export const LessMess = (props) => {
             name="date"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="likedItBecause-input">Liked it because</label>
           <input
             type="text"
@@ -149,7 +158,7 @@ export const LessMess = (props) => {
             name="likedItBecause"
           ></input>
         </div>
-        <div>
+        <div className="input-block">
           <label htmlFor="more-input">More</label>
           <input
             type="text"
@@ -159,7 +168,11 @@ export const LessMess = (props) => {
             name="more"
           ></input>
         </div>
+
+        <button type="button" onClick={addItem}>
+          Add Item
+        </button>
       </form>
-    </>
+    </body>
   );
 };
