@@ -1,5 +1,5 @@
 # Zara-LessMess
-"LessMess" is the initial idea of creating an app to share no-more-needed items for free, and to live simple.
+"LessMess" is the initial idea of creating an app to share no-longer-needed items for free, and to live simple.
 
 ## Usage
 Run the React app in local server
