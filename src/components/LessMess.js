@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-export const LessMess = (props) => {
+// export const LessMess = (props) => {...  const [newItems, setNewItems] = useState(props.items.concat())
+//destructuring:
+export const LessMess = ({items}) => {
   const [itemForm, SetItemForm] = useState({
     item: '',
     material: '',
@@ -12,13 +14,21 @@ export const LessMess = (props) => {
     likedItBecause: '',
     more: '',
   });
-  const [newItems, setNewItems] = useState(props.items.concat());
+  const [newItems, setNewItems] = useState(items.concat());
 
-  const change = (e) => {
+/* const change = (e) => {
+  SetItemForm({
+    ...itemForm,
+    [e.target.name]:
+      e.target.type === 'number' ? Number(e.target.value) : e.target.value,
+  });
+}; */
+//destructuring:
+  const change = ({target: {name, type, value}}) => {
     SetItemForm({
       ...itemForm,
-      [e.target.name]:
-        e.target.type === 'number' ? Number(e.target.value) : e.target.value,
+      [name]:
+        type === 'number' ? Number(value) : value,
     });
   };
 
@@ -34,7 +44,7 @@ export const LessMess = (props) => {
   return (
     <body>
       <header>
-        <img src="../imgs/logo.svg"></img>
+        <img src="../imgs/logo.svg" alt="logo"></img>
         <h1>LessMess!</h1>
         <p>Items I no longer need</p>
       </header>
