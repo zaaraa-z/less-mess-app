@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { AppHeader } from './AppHeader';
+import { LessMessTable } from './LessMessTable';
 
 // export const LessMess = (props) => {...  const [newItems, setNewItems] = useState(props.items.concat())
 //destructuring:
-export const LessMess = ({items}) => {
+export const LessMess = ({ items }) => {
   const [itemForm, SetItemForm] = useState({
     item: '',
     material: '',
@@ -17,19 +18,18 @@ export const LessMess = ({items}) => {
   });
   const [newItems, setNewItems] = useState(items.concat());
 
-/* const change = (e) => {
+  /* const change = (e) => {
   SetItemForm({
     ...itemForm,
     [e.target.name]:
       e.target.type === 'number' ? Number(e.target.value) : e.target.value,
   });
 }; */
-//destructuring:
-  const change = ({target: {name, type, value}}) => {
+  //destructuring:
+  const change = ({ target: { name, type, value } }) => {
     SetItemForm({
       ...itemForm,
-      [name]:
-        type === 'number' ? Number(value) : value,
+      [name]: type === 'number' ? Number(value) : value,
     });
   };
 
@@ -44,46 +44,9 @@ export const LessMess = ({items}) => {
 
   return (
     <body>
-      {/* <header>
-        <img src="../imgs/logo.svg" alt="logo"></img>
-        <h1>LessMess!</h1>
-        <p>Items I no longer need</p>
-      </header> */}
-      <AppHeader appHeaderText="LessMess!" appSlogan="Items I no longer need"/>
+      <AppHeader appHeaderText="LessMess!" appSlogan="Items I no longer need" />
 
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Item</th>
-            <th>Material</th>
-            <th>Color</th>
-            <th>Size</th>
-            <th>Quality</th>
-            <th>Good for</th>
-            <th>Date</th>
-            <th>Liked it because</th>
-            <th>More</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {newItems.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.item}</td>
-              <td>{item.material}</td>
-              <td>{item.color}</td>
-              <td>{item.size}</td>
-              <td>{item.quality}</td>
-              <td>{item.goodFor}</td>
-              <td>{item.date}</td>
-              <td>{item.likedItBecause}</td>
-              <td>{item.more}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <LessMessTable itemsArr={items} />
 
       <form>
         <div className="input-block">
