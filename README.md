@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Zara-LessMess
 "LessMess" is the initial idea of creating an app to share no-longer-needed items for free, and to live simple.
 
