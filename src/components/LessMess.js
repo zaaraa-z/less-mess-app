@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AppHeader } from './AppHeader';
 
 // export const LessMess = (props) => {...  const [newItems, setNewItems] = useState(props.items.concat())
 //destructuring:
@@ -43,11 +44,12 @@ export const LessMess = ({items}) => {
 
   return (
     <body>
-      <header>
+      {/* <header>
         <img src="../imgs/logo.svg" alt="logo"></img>
         <h1>LessMess!</h1>
         <p>Items I no longer need</p>
-      </header>
+      </header> */}
+      <AppHeader appHeaderText="LessMess!" appSlogan="Items I no longer need"/>
 
       <table>
         <thead>
