@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const LessMessForm = ({ onSubmitItem, btnText }) => {
   const [itemForm, SetItemForm] = useState({
-    youritem: '',
+    item: '',
     material: '',
     color: '',
     size: '',
