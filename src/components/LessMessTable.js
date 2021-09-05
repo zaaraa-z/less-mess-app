@@ -1,7 +1,8 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { itemsPropType } from '../propTypes/itemsPropType';
 
-export const LessMessTable = ({ itemsArr }) => {
+export const LessMessTable = ({ itemsArr, onDeleteItem: deleteItem }) => {
   return (
     <table>
       <thead>
@@ -16,13 +17,14 @@ export const LessMessTable = ({ itemsArr }) => {
           <th>Date</th>
           <th>Liked it because</th>
           <th>More</th>
+          <th>Actions</th>
         </tr>
       </thead>
 
       <tbody>
         {itemsArr.length === 0 && (
           <tr>
-            <td colSpan="10">There are no items yet.</td>
+            <td colSpan="11">There are no items yet.</td>
           </tr>
         )}
         {itemsArr.map((item) => (
@@ -37,6 +39,11 @@ export const LessMessTable = ({ itemsArr }) => {
             <td>{item.date}</td>
             <td>{item.likedItBecause}</td>
             <td>{item.more}</td>
+            <td>
+              <button type="button" onClick={() => deleteItem(item.id)}>
+                Delete
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
@@ -50,4 +57,5 @@ LessMessTable.defaultProps = {
 
 LessMessTable.propTypes = {
   itemsArr: itemsPropType,
+  onDeleteItem: propTypes.func.isRequired,
 };
