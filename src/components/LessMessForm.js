@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const LessMessForm = ({ onSubmitItem, btnText }) => {
   const [itemForm, SetItemForm] = useState({
@@ -148,4 +149,13 @@ export const LessMessForm = ({ onSubmitItem, btnText }) => {
       </button>
     </form>
   );
+};
+
+LessMessForm.defaultProps = {
+  btnText: 'Submit',
+};
+
+LessMessForm.propTypes = {
+  btnText: PropTypes.string,
+  onSubmitItem: PropTypes.func.isRequired,
 };
