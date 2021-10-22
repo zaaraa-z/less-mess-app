@@ -43,6 +43,7 @@ export const LessMessTable = ({ itemsArr, onDeleteItem: deleteItem }) => {
               <button type="button" onClick={() => deleteItem(item.id)}>
                 Delete
               </button>
+              <button type="button">Edit</button>
             </td>
           </tr>
         ))}

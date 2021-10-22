@@ -144,7 +144,7 @@ export const LessMessForm = ({ onSubmitItem, btnText }) => {
         ></input>
       </div>
 
-      <button type="button" onClick={submitItem}>
+      <button type="button" id="submit-btn" onClick={submitItem}>
         {btnText}
       </button>
     </form>
