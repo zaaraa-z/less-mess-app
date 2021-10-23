@@ -1,6 +1,7 @@
-import React from 'react';
-import propTypes from 'prop-types';
+import React from './react';
+import propTypes from './prop-types';
 import { itemsPropType } from '../propTypes/itemsPropType';
+import { ViewtableRow } from './ViewTableRow';
 
 export const LessMessTable = ({ itemsArr, onDeleteItem: deleteItem }) => {
   return (
@@ -28,24 +29,7 @@ export const LessMessTable = ({ itemsArr, onDeleteItem: deleteItem }) => {
           </tr>
         )}
         {itemsArr.map((item) => (
-          <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.item}</td>
-            <td>{item.material}</td>
-            <td>{item.color}</td>
-            <td>{item.size}</td>
-            <td>{item.quality}</td>
-            <td>{item.goodFor}</td>
-            <td>{item.date}</td>
-            <td>{item.likedItBecause}</td>
-            <td>{item.more}</td>
-            <td>
-              <button type="button" onClick={() => deleteItem(item.id)}>
-                Delete
-              </button>
-              <button type="button">Edit</button>
-            </td>
-          </tr>
+          <ViewtableRow item={item} key={item.id} />
         ))}
       </tbody>
     </table>
