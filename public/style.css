@@ -124,3 +124,8 @@ button:hover {
   height: 40px;
   width: 140px;
 }
+
+table input,
+table select {
+  width: 90px;
+}
