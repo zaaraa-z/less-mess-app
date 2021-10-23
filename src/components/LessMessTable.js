@@ -2,11 +2,15 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { itemsPropType } from '../propTypes/itemsPropType';
 import { ViewtableRow } from './ViewTableRow';
+import { editTableRow } from './EditTableRow';
 
 export const LessMessTable = ({
   itemsArr,
   onDeleteItem: deleteItem,
+  editItemId,
   onEditItem: editItem,
+  onSaveItem: saveItem,
+  onCancelItem: cancelItem,
 }) => {
   return (
     <table>
@@ -50,14 +54,23 @@ export const LessMessTable = ({
             <td colSpan="11">There are no items yet.</td>
           </tr>
         )}
-        {itemsArr.map((item) => (
-          <ViewtableRow
-            item={item}
-            key={item.id}
-            onDeleteItem={deleteItem}
-            onEditItem={editItem}
-          />
-        ))}
+        {itemsArr.map((item) =>
+          item.id === editItemId ? (
+            <editTableRow
+              item={item}
+              key={item.id}
+              onSaveItem={saveItem}
+              onCancelItem={cancelItem}
+            />
+          ) : (
+            <ViewtableRow
+              item={item}
+              key={item.id}
+              onDeleteItem={deleteItem}
+              onEditItem={editItem}
+            />
+          )
+        )}
       </tbody>
     </table>
   );
@@ -65,10 +78,14 @@ export const LessMessTable = ({
 
 LessMessTable.defaultProps = {
   itemsArr: [],
+  editItemId: -1,
 };
 
 LessMessTable.propTypes = {
   itemsArr: itemsPropType,
+  editItemId: propTypes.number,
   onDeleteItem: propTypes.func.isRequired,
   onEditItem: propTypes.func.isRequired,
+  onSaveItem: propTypes.func.isRequired,
+  onCancelItem: propTypes.func.isRequired,
 };

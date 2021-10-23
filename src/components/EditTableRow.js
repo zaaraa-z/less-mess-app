@@ -6,19 +6,9 @@ import { useForm } from '../hooks/useForm';
 export const EditTableRow = ({
   item,
   onSaveItem,
-  oncalcelItem: cancelItem,
+  onCalcelItem: cancelItem,
 }) => {
-  const [itemForm, change] = useForm({
-    item: '',
-    material: '',
-    color: '',
-    size: '',
-    quality: '',
-    goodFor: '',
-    date: 1900,
-    likedItBecause: '',
-    more: '',
-  });
+  const [itemForm, change] = useForm({ ...item });
 
   const saveItem = () => {
     onSaveItem({
@@ -132,5 +122,5 @@ export const EditTableRow = ({
 EditTableRow.propTypes = {
   item: itemsPropType.isRequired,
   onSaveItem: PropTypes.func.isRequired,
-  oncalcelItem: PropTypes.func.isRequired,
+  onCalcelItem: PropTypes.func.isRequired,
 };
