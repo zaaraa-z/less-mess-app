@@ -35,7 +35,7 @@ export const LessMess = ({ items: initialItems }) => {
     <>
       <AppHeader appHeaderText="LessMess!" appSlogan="Items I no longer need" />
       <LessMessTable itemsArr={newItems} onDeleteItem={deleteItem} />
-      <LessMessForm btnText="Less Mess..." onSubmitItem={addItem} />
+      <LessMessForm btnText="Less Mess!" onSubmitItem={addItem} />
     </>
   );
 };

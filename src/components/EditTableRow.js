@@ -4,9 +4,13 @@ import { itemsPropType } from '../propTypes/itemsPropType';
 
 export const EditTableRow = ({
   item,
-  onSaveItem: saveItem,
+  onSaveItem,
   oncalcelItem: cancelItem,
 }) => {
+  const saveItem = () => {
+    //call onSaveItem
+  };
+
   return (
     <tr>
       <td>{item.id}</td>
@@ -20,10 +24,10 @@ export const EditTableRow = ({
       <td>{item.likedItBecause}</td>
       <td>{item.more}</td>
       <td>
-        <button type="button" onClick={() => cancelItem(item.id)}>
+        <button type="button" onClick={cancelItem}>
           Cancel
         </button>
-        <button type="button" onClick={() => saveItem(item.id)}>
+        <button type="button" onClick={saveItem}>
           Save
         </button>
       </td>
@@ -32,7 +36,7 @@ export const EditTableRow = ({
 };
 
 EditTableRow.propTypes = {
-  item: itemsPropType,
+  item: itemsPropType.isRequired,
   onSaveItem: PropTypes.func.isRequired,
   oncalcelItem: PropTypes.func.isRequired,
 };
