@@ -23,7 +23,9 @@ export const ViewtableRow = ({
         <button type="button" onClick={() => deleteItem(item.id)}>
           Delete
         </button>
-        <button type="button">Edit</button>
+        <button type="button" onClick={() => EditItem(item.id)}>
+          Edit
+        </button>
       </td>
     </tr>
   );

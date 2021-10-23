@@ -1,9 +1,13 @@
-import React from './react';
-import propTypes from './prop-types';
+import React from 'react';
+import propTypes from 'prop-types';
 import { itemsPropType } from '../propTypes/itemsPropType';
 import { ViewtableRow } from './ViewTableRow';
 
-export const LessMessTable = ({ itemsArr, onDeleteItem: deleteItem }) => {
+export const LessMessTable = ({
+  itemsArr,
+  onDeleteItem: deleteItem,
+  onEditItem: editItem,
+}) => {
   return (
     <table>
       <thead>
@@ -29,7 +33,12 @@ export const LessMessTable = ({ itemsArr, onDeleteItem: deleteItem }) => {
           </tr>
         )}
         {itemsArr.map((item) => (
-          <ViewtableRow item={item} key={item.id} />
+          <ViewtableRow
+            item={item}
+            key={item.id}
+            onDeleteItem={deleteItem}
+            onEditItem={editItem}
+          />
         ))}
       </tbody>
     </table>
@@ -43,4 +52,5 @@ LessMessTable.defaultProps = {
 LessMessTable.propTypes = {
   itemsArr: itemsPropType,
   onDeleteItem: propTypes.func.isRequired,
+  onEditItem: propTypes.func.isRequired,
 };
