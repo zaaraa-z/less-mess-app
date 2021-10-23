@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useForm } from '../hooks/useForm';
 
 export const LessMessForm = ({ onSubmitItem, btnText }) => {
-  const [itemForm, SetItemForm] = useState({
+  const [itemForm, change, resetItemForm] = useForm({
     item: '',
     material: '',
     color: '',
@@ -14,36 +15,11 @@ export const LessMessForm = ({ onSubmitItem, btnText }) => {
     more: '',
   });
 
-  /* const change = (e) => {
-  SetItemForm({
-    ...itemForm,
-    [e.target.name]:
-      e.target.type === 'number' ? Number(e.target.value) : e.target.value,
-  });
-}; */
-  //destructuring:
-  const change = ({ target: { name, type, value } }) => {
-    SetItemForm({
-      ...itemForm,
-      [name]: type === 'number' ? Number(value) : value,
-    });
-  };
-
   const submitItem = () => {
     onSubmitItem({ ...itemForm });
 
     //reset the form
-    SetItemForm({
-      item: '',
-      material: '',
-      color: '',
-      size: '',
-      quality: '',
-      goodFor: '',
-      date: 1900,
-      likedItBecause: '',
-      more: '',
-    });
+    resetItemForm();
   };
 
   return (
