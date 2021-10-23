@@ -13,15 +13,33 @@ export const LessMessTable = ({
       <thead>
         <tr>
           <th>Id</th>
-          <th>Item</th>
-          <th>Material</th>
-          <th>Color</th>
-          <th>Size</th>
-          <th>Quality</th>
-          <th>Good for</th>
-          <th>Date</th>
-          <th>Liked it because</th>
-          <th>More</th>
+          <th>
+            <label htmlFor="edit-item-input">Item</label>
+          </th>
+          <th>
+            <label htmlFor="edit-material-input">Material</label>
+          </th>
+          <th>
+            <label htmlFor="edit-color-input">Color</label>
+          </th>
+          <th>
+            <label htmlFor="edit-size-input">Size</label>
+          </th>
+          <th>
+            <label htmlFor="edit-quality-select">Quality</label>
+          </th>
+          <th>
+            <label htmlFor="edit-goodFor-input">Good for</label>
+          </th>
+          <th>
+            <label htmlFor="edit-date-input">Date</label>
+          </th>
+          <th>
+            <label htmlFor="edit-likedItBecause-input">Liked it because</label>
+          </th>
+          <th>
+            <label htmlFor="edit-more-input">More</label>
+          </th>
           <th>Actions</th>
         </tr>
       </thead>
