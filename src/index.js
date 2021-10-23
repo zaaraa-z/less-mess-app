@@ -13,7 +13,7 @@ const itemsArr = [
     quality: 'never used',
     goodFor: 'women',
     date: 2018,
-    likedItBecause: 'it is cool',
+    likeItBecause: 'it is cool',
     more: 'take care of it!',
   },
   {
@@ -25,7 +25,7 @@ const itemsArr = [
     quality: 'almost new',
     goodFor: 'hot drinks',
     date: 2015,
-    likedItBecause: 'it is funny',
+    likeItBecause: 'it is funny',
     more: 'nothing',
   },
 ];

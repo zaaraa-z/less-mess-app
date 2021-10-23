@@ -42,7 +42,7 @@ export const LessMess = ({ items: initialItems }) => {
       (i) => i.id === item.id
     );
     newItemsArrBeingEdited[itemBeingEditedIndex] = item;
-    setEditItemID(newItemsArrBeingEdited);
+    setNewItems(newItemsArrBeingEdited);
 
     setEditItemID(-1);
   };

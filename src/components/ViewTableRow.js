@@ -17,7 +17,7 @@ export const ViewtableRow = ({
       <td>{item.quality}</td>
       <td>{item.goodFor}</td>
       <td>{item.date}</td>
-      <td>{item.likedItBecause}</td>
+      <td>{item.likeItBecause}</td>
       <td>{item.more}</td>
       <td>
         <button type="button" onClick={() => deleteItem(item.id)}>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-export const useForm = (initialItems) => {
-  const [form, setFrom] = useState({ initialItems });
+export const useForm = (initialForm) => {
+  const [form, setFrom] = useState(initialForm);
 
   const change = ({ target: { name, type, value } }) => {
     setFrom({
@@ -14,7 +14,7 @@ export const useForm = (initialItems) => {
     form,
     change,
     () => {
-      setFrom(initialItems);
+      setFrom(initialForm);
     },
   ];
 };

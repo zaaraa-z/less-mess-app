@@ -11,7 +11,7 @@ export const LessMessForm = ({ onSubmitItem, btnText }) => {
     quality: '',
     goodFor: '',
     date: 1900,
-    likedItBecause: '',
+    likeItBecause: '',
     more: '',
   });
 
@@ -100,13 +100,13 @@ export const LessMessForm = ({ onSubmitItem, btnText }) => {
         ></input>
       </div>
       <div className="input-block">
-        <label htmlFor="likedItBecause-input">Liked it because</label>
+        <label htmlFor="likeItBecause-input">Liked it because</label>
         <input
           type="text"
-          id="likedItBecause-input"
-          value={itemForm.likedItBecause}
+          id="likeItBecause-input"
+          value={itemForm.likeItBecause}
           onChange={change}
-          name="likedItBecause"
+          name="likeItBecause"
         ></input>
       </div>
       <div className="input-block">

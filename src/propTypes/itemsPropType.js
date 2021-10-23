@@ -9,7 +9,7 @@ export const itemPropType = propTypes.shape({
   quality: propTypes.string,
   goodFor: propTypes.string,
   date: propTypes.number,
-  likedItBecause: propTypes.string,
+  likeItBecause: propTypes.string,
   more: propTypes.string,
 });
 

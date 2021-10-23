@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { itemsPropType } from '../propTypes/itemsPropType';
+import { itemPropType } from '../propTypes/itemsPropType';
 import { useForm } from '../hooks/useForm';
 
 export const EditTableRow = ({
   item,
   onSaveItem,
-  onCalcelItem: cancelItem,
+  onCancelItem: cancelItem,
 }) => {
   const [itemForm, change] = useForm({ ...item });
 
@@ -90,10 +90,10 @@ export const EditTableRow = ({
       </td>
       <td>
         <input
-          id="edit-likedItBecause-input"
+          id="edit-likeItBecause-input"
           type="text"
           name="likeItBecause"
-          value={itemForm.likedItBecause}
+          value={itemForm.likeItBecause}
           onChange={change}
         />
       </td>
@@ -120,7 +120,7 @@ export const EditTableRow = ({
 };
 
 EditTableRow.propTypes = {
-  item: itemsPropType.isRequired,
+  item: itemPropType.isRequired,
   onSaveItem: PropTypes.func.isRequired,
-  onCalcelItem: PropTypes.func.isRequired,
+  onCancelItem: PropTypes.func.isRequired,
 };
