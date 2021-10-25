@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from '../hooks/useForm';
 
-export const LessMessForm = ({ onSubmitItem, btnText }) => {
+export const LessMessForm = memo(({ onSubmitItem, btnText }) => {
   const [itemForm, change, resetItemForm] = useForm({
     item: '',
     material: '',
@@ -125,7 +125,7 @@ export const LessMessForm = ({ onSubmitItem, btnText }) => {
       </button>
     </form>
   );
-};
+});
 
 LessMessForm.defaultProps = {
   btnText: 'Submit',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { AppHeader } from './AppHeader';
 import { LessMessTable } from './LessMessTable';
 import { LessMessForm } from './LessMessForm';
@@ -9,26 +9,29 @@ export const LessMess = ({ items: initialItems }) => {
   const [newItems, setNewItems] = useState(initialItems.concat());
   const [editItemID, setEditItemID] = useState(-1);
 
-  const addItem = (outputDataFromLessMessFrom) => {
-    // ZZ solution1 to -infinity with the following spread operator:
-    // if (newItems.length !== 0) {
-    setNewItems(
-      newItems.concat({
-        ...outputDataFromLessMessFrom,
-        id: Math.max(0, ...newItems.map((c) => c.id)) + 1, //ZZ solution2 to -infinity with the spread operator:Math.max(0, ...)
-      })
-    );
-    // } else {
-    //   setNewItems(
-    //     newItems.concat({
-    //       ...outputDataFromLessMessFrom,
-    //       id: 1,
-    //     })
-    //   );
-    // }
+  const addItem = useCallback(
+    (outputDataFromLessMessFrom) => {
+      // ZZ solution1 to -infinity with the following spread operator:
+      // if (newItems.length !== 0) {
+      setNewItems(
+        newItems.concat({
+          ...outputDataFromLessMessFrom,
+          id: Math.max(0, ...newItems.map((c) => c.id)) + 1, //ZZ solution2 to -infinity with the spread operator:Math.max(0, ...)
+        })
+      );
+      // } else {
+      //   setNewItems(
+      //     newItems.concat({
+      //       ...outputDataFromLessMessFrom,
+      //       id: 1,
+      //     })
+      //   );
+      // }
 
-    setEditItemID(-1);
-  };
+      setEditItemID(-1);
+    },
+    [newItems]
+  );
 
   const deleteItem = (itemId) => {
     setNewItems(newItems.filter((item) => item.id !== itemId));
