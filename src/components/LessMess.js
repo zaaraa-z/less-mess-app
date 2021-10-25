@@ -33,26 +33,32 @@ export const LessMess = ({ items: initialItems }) => {
     [newItems]
   );
 
-  const deleteItem = (itemId) => {
-    setNewItems(newItems.filter((item) => item.id !== itemId));
+  const deleteItem = useCallback(
+    (itemId) => {
+      setNewItems(newItems.filter((item) => item.id !== itemId));
 
+      setEditItemID(-1);
+    },
+    [newItems]
+  );
+
+  const replaceItemsArr = useCallback(
+    (item) => {
+      const newItemsArrBeingEdited = newItems.concat();
+      const itemBeingEditedIndex = newItemsArrBeingEdited.findIndex(
+        (i) => i.id === item.id
+      );
+      newItemsArrBeingEdited[itemBeingEditedIndex] = item;
+      setNewItems(newItemsArrBeingEdited);
+
+      setEditItemID(-1);
+    },
+    [newItems]
+  );
+
+  const cancelItem = useCallback(() => {
     setEditItemID(-1);
-  };
-
-  const replaceItemsArr = (item) => {
-    const newItemsArrBeingEdited = newItems.concat();
-    const itemBeingEditedIndex = newItemsArrBeingEdited.findIndex(
-      (i) => i.id === item.id
-    );
-    newItemsArrBeingEdited[itemBeingEditedIndex] = item;
-    setNewItems(newItemsArrBeingEdited);
-
-    setEditItemID(-1);
-  };
-
-  const cancelItem = () => {
-    setEditItemID(-1);
-  };
+  }, []);
 
   return (
     <>
