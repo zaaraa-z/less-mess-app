@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { itemPropType } from '../propTypes/itemsPropType';
 import { useForm } from '../hooks/useForm';
+import { useDefaultInputFocus } from '../hooks/useDefaultInputFocus';
 
 export const EditTableRow = ({
   item,
@@ -9,6 +10,8 @@ export const EditTableRow = ({
   onCancelItem: cancelItem,
 }) => {
   const [itemForm, change] = useForm({ ...item });
+
+  const defaultFocusedInputRef = useDefaultInputFocus();
 
   const saveItem = () => {
     onSaveItem({
@@ -27,6 +30,7 @@ export const EditTableRow = ({
           name="item"
           value={itemForm.item}
           onChange={change}
+          ref={defaultFocusedInputRef}
         />
       </td>
       <td>

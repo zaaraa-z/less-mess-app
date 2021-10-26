@@ -1,7 +1,8 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { AppHeader } from './AppHeader';
 import { LessMessTable } from './LessMessTable';
 import { LessMessForm } from './LessMessForm';
+import { useDefaultInputFocus } from '../hooks/useDefaultInputFocus';
 
 // export const LessMess = (props) => {...  const [newItems, setNewItems] = useState(props.items.concat())
 //destructuring:
@@ -9,13 +10,7 @@ export const LessMess = ({ items: initialItems }) => {
   const [newItems, setNewItems] = useState(initialItems.concat());
   const [editItemID, setEditItemID] = useState(-1);
 
-  const defaultFocusedInputRef = useRef();
-
-  useEffect(() => {
-    if (defaultFocusedInputRef.current) {
-      defaultFocusedInputRef.current.focus();
-    }
-  }, []);
+  const defaultFocusedInputRef = useDefaultInputFocus();
 
   const addItem = useCallback(
     (outputDataFromLessMessFrom) => {
