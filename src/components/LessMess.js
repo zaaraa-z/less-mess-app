@@ -12,6 +12,13 @@ export const LessMess = ({ items: initialItems }) => {
 
   const defaultFocusedInputRef = useDefaultInputFocus();
 
+  const resetAfterClickingCancel = useCallback(() => {
+    setEditItemID(-1);
+    if (defaultFocusedInputRef.current) {
+      defaultFocusedInputRef.current.focus();
+    }
+  }, [defaultFocusedInputRef]);
+
   const addItem = useCallback(
     (outputDataFromLessMessFrom) => {
       // ZZ solution1 to -infinity with the following spread operator:
@@ -31,18 +38,18 @@ export const LessMess = ({ items: initialItems }) => {
       //   );
       // }
 
-      setEditItemID(-1);
+      resetAfterClickingCancel();
     },
-    [newItems]
+    [newItems, resetAfterClickingCancel]
   );
 
   const deleteItem = useCallback(
     (itemId) => {
       setNewItems(newItems.filter((item) => item.id !== itemId));
 
-      setEditItemID(-1);
+      resetAfterClickingCancel();
     },
-    [newItems]
+    [newItems, resetAfterClickingCancel]
   );
 
   const replaceItemsArr = useCallback(
@@ -54,14 +61,14 @@ export const LessMess = ({ items: initialItems }) => {
       newItemsArrBeingEdited[itemBeingEditedIndex] = item;
       setNewItems(newItemsArrBeingEdited);
 
-      setEditItemID(-1);
+      resetAfterClickingCancel();
     },
-    [newItems]
+    [newItems, resetAfterClickingCancel]
   );
 
   const cancelItem = useCallback(() => {
-    setEditItemID(-1);
-  }, []);
+    resetAfterClickingCancel();
+  }, [resetAfterClickingCancel]);
 
   return (
     <>
