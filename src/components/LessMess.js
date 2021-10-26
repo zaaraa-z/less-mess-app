@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { AppHeader } from './AppHeader';
 import { LessMessTable } from './LessMessTable';
 import { LessMessForm } from './LessMessForm';
@@ -8,6 +8,14 @@ import { LessMessForm } from './LessMessForm';
 export const LessMess = ({ items: initialItems }) => {
   const [newItems, setNewItems] = useState(initialItems.concat());
   const [editItemID, setEditItemID] = useState(-1);
+
+  const defaultFocusedInputRef = useRef();
+
+  useEffect(() => {
+    if (defaultFocusedInputRef.current) {
+      defaultFocusedInputRef.current.focus();
+    }
+  }, []);
 
   const addItem = useCallback(
     (outputDataFromLessMessFrom) => {
@@ -71,7 +79,11 @@ export const LessMess = ({ items: initialItems }) => {
         onSaveItem={replaceItemsArr}
         onCancelItem={cancelItem}
       />
-      <LessMessForm btnText="Less Mess!" onSubmitItem={addItem} />
+      <LessMessForm
+        btnText="Less Mess!"
+        onSubmitItem={addItem}
+        ref={defaultFocusedInputRef}
+      />
     </>
   );
 };
