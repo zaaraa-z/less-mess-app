@@ -10,6 +10,9 @@ export class EditTableRow extends Component {
     };
 
     this.defaultFocusedInputRef = createRef();
+
+    this.change = this.change.bind(this);
+    this.onSaveItem = this.saveItem.bind(this);
   }
 
   componentDidMount() {
