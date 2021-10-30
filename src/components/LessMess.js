@@ -1,16 +1,23 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { AppHeader } from './AppHeader';
 import { LessMessTable } from './LessMessTable';
 import { LessMessForm } from './LessMessForm';
 import { useDefaultInputFocus } from '../hooks/useDefaultInputFocus';
 
+import { getAllItems } from '../services/items';
+
 // export const LessMess = (props) => {...  const [newItems, setNewItems] = useState(props.items.concat())
 //destructuring:
-export const LessMess = ({ items: initialItems }) => {
-  const [newItems, setNewItems] = useState(initialItems.concat());
+export const LessMess = () => {
+  const [newItems, setNewItems] = useState([]);
   const [editItemID, setEditItemID] = useState(-1);
 
   const defaultFocusedInputRef = useDefaultInputFocus();
+
+  //initialize items on the state after having retrieved them from actual service
+  useEffect(() => {
+    getAllItems().then((items) => setNewItems(items));
+  }, []);
 
   const resetAfterClickingCancel = useCallback(() => {
     setEditItemID(-1);

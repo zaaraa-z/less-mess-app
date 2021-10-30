@@ -1,8 +1,8 @@
-const baseURL = 'htttp://localhost:3035/items';
+const baseURL = 'http://localhost:3050/items';
 
 const getCollectionURL = () => baseURL;
 
-const getAllItems = async () => {
+export const getAllItems = async () => {
   const res = await fetch(getCollectionURL());
   const items = await res.json();
   return items;
