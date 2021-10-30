@@ -9,7 +9,7 @@ Run the React app in local server
 React.js, React Hook, json-Server, HTML5, CSS3, JS
 
 ## Additional Note
-I really loved this project and learnt  A LOT! Thanks to @ericwgreene!
+I really loved this project and learnt  A LOT! Thanks to [Eric Greene](https://github.com/ericwgreene)!
 
 ## Contact
 zamanian.zahra@gmail.com  
