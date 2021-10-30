@@ -6,23 +6,11 @@
       "material": "cotton",
       "color": "dark red",
       "size": "40",
-      "quality": "never used",
+      "quality": "bad",
       "goodFor": "women",
-      "date": 2018,
+      "date": 2020,
       "likeItBecause": "it is cool",
       "more": "take care of it!"
-    },
-    {
-      "id": 2,
-      "item": "mug",
-      "material": "pottery",
-      "color": "white",
-      "size": "9cm*13cm",
-      "quality": "almost new",
-      "goodFor": "hot drinks",
-      "date": 2015,
-      "likeItBecause": "it is funny",
-      "more": "nothing"
     }
   ]
 }
