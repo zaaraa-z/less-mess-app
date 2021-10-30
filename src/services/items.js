@@ -5,5 +5,7 @@ const getCollectionURL = () => baseURL;
 export const getAllItems = async () => {
   const res = await fetch(getCollectionURL());
   const items = await res.json();
-  return items;
+  //   return items;
+
+  return new Promise((resolve) => setTimeout(() => resolve(items), 2000));
 };
