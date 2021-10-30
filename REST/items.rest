@@ -1,0 +1,47 @@
+GET http://localhost:3050/items HTTP/1.1
+
+###
+
+GET http://localhost:3050/items/2 HTTP/1.1
+
+###
+
+POST http://localhost:3050/items HTTP/1.1
+Content-Type: application/json
+
+{
+    "item": "pencil",
+    "material": "wood",
+    "color": "blue",
+    "size": "-",
+    "quality": "never used",
+    "goodFor": "anyone",
+    "date": 2021,
+    "likeItBecause": "it is practical",
+    "more": "-"
+}
+
+###
+
+PUT http://localhost:3050/items/4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "item": "pencil",
+    "material": "wood---paper",
+    "color": "blue",
+    "size": "-",
+    "quality": "never used",
+    "goodFor": "anyone",
+    "date": 2021,
+    "likeItBecause": "it is practical",
+    "more": "-"
+}
+
+###
+
+DELETE http://localhost:3050/items/5 HTTP/1.1
+
+###
+
+DELETE http://localhost:3050/items/3 HTTP/1.1
