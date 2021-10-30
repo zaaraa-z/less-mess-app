@@ -1,20 +1,15 @@
 
 # Zara-LessMess
-"LessMess" is the initial idea of creating an app to share no-longer-needed items for free, and to live simple.
-
-## Update
-I'm still developing...
+"LessMess" App is the initial idea of creating an app to share no-longer-needed items for free, and to live simple. In this app, you can add, delete, and edit thems. All data will be saved in a JSON file as the database using json-server.
 
 ## Usage
 Run the React app in local server
 
 ## Technologies Used
-React.js, HTML5, CSS3, JS
+React.js, React Hook, json-Server, HTML5, CSS3, JS
 
-
-## Additional Notes
-soon ...
-
+## Additional Note
+I really loved this project and learnt  A LOT! Thanks to @ericwgreene!
 
 ## Contact
 zamanian.zahra@gmail.com  
