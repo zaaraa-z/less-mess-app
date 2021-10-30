@@ -9,6 +9,7 @@ export const getAllItems = async () => {
   const items = await res.json();
   //   return items;
 
+  // EWG 10302021: You may want to remove this in the final application
   return new Promise((resolve) => setTimeout(() => resolve(items), 1000));
 };
 
