@@ -3,20 +3,23 @@ import { AppHeader } from './AppHeader';
 import { LessMessTable } from './LessMessTable';
 import { LessMessForm } from './LessMessForm';
 import { useDefaultInputFocus } from '../hooks/useDefaultInputFocus';
+import {
+  getAllItems as returnAllItemsInDatabase,
+  returnAddedItemToDatabase,
+  returnEditedItemInDatabase,
+  deleteItemInDatabase,
+} from '../services/items';
 
-import { getAllItems } from '../services/items';
-
-// export const LessMess = (props) => {...  const [newItems, setNewItems] = useState(props.items.concat())
-//destructuring:
+//----------------------------------------------------------
+//----------------------------------------------------------
 export const LessMess = () => {
   const [newItems, setNewItems] = useState([]);
   const [editItemID, setEditItemID] = useState(-1);
-
   const defaultFocusedInputRef = useDefaultInputFocus();
 
   //initialize items on the state after having retrieved them from actual service
   useEffect(() => {
-    getAllItems().then((items) => setNewItems(items));
+    returnAllItemsInDatabase().then((items) => setNewItems(items));
   }, []);
 
   const resetAfterClickingCancel = useCallback(() => {
@@ -26,6 +29,7 @@ export const LessMess = () => {
     }
   }, [defaultFocusedInputRef]);
 
+  //form functions-----------------------------
   const addItem = useCallback(
     (outputDataFromLessMessFrom) => {
       // ZZ solution1 to -infinity with the following spread operator:
@@ -77,6 +81,7 @@ export const LessMess = () => {
     resetAfterClickingCancel();
   }, [resetAfterClickingCancel]);
 
+  //function return----------------------------
   return (
     <>
       <AppHeader appHeaderText="LessMess!" appSlogan="Items I no longer need" />
