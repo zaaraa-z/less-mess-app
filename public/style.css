@@ -80,7 +80,8 @@ form label {
 }
 
 input,
-select {
+select,
+textarea {
   padding: 6px;
   width: 130px;
   border-radius: 5px;
@@ -90,7 +91,9 @@ select {
 input:focus,
 input:active,
 select:focus,
-select:active {
+select:active,
+textarea:focus,
+textarea:active {
   outline: 0px !important;
   /* -webkit-appearance: none; */
   box-shadow: none !important;

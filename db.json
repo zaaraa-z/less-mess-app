@@ -1,16 +1,16 @@
 {
   "items": [
     {
-      "id": 1,
-      "item": "shirt",
-      "material": "cotton",
-      "color": "dark red",
-      "size": "40",
-      "quality": "bad",
-      "goodFor": "women",
-      "date": 2020,
-      "likeItBecause": "it is cool",
-      "more": "take care of it!"
+      "item": "ddd",
+      "material": "dd",
+      "color": "",
+      "size": "ddd",
+      "quality": "",
+      "goodFor": "dd",
+      "date": 1900,
+      "likeItBecause": "",
+      "more": "",
+      "id": 1
     }
   ]
 }
