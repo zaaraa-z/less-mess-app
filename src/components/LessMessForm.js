@@ -113,14 +113,13 @@ export const LessMessForm = memo(
         </div>
         <div className="input-block">
           <label htmlFor="more-input">More</label>
-          {/* EWG 10302021: consider making this a textarea, so it is easier to add more comments */}
-          <input
+          <textarea
             type="text"
             id="more-input"
             value={itemForm.more}
             onChange={change}
             name="more"
-          ></input>
+          ></textarea>
         </div>
 
         <button type="button" id="submit-btn" onClick={submitItem}>

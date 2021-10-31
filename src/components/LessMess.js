@@ -25,28 +25,26 @@ export const LessMess = () => {
   }, [defaultFocusedInputRef]);
 
   const updateCollectionDatabase = useCallback(() => {
-      // EWG 10302021: for all callbacks that perform async
-      // EWG 10302021: operations the promise should be returned
-      // EWG 10302021: so the caller can chain off of it
-      return returnAllItemsInDatabase().then((items) => {
-        setNewItems(items);
-        resetAfterClickingCancel();
-      });
+    // EWG 10302021: for all callbacks that perform async
+    // EWG 10302021: operations the promise should be returned
+    // EWG 10302021: so the caller can chain off of it
+    return returnAllItemsInDatabase().then((items) => {
+      setNewItems(items);
+      resetAfterClickingCancel();
+    });
   }, [resetAfterClickingCancel]);
 
-  //initialize items on the state after having retrieved them from actual service
   useEffect(() => {
     updateCollectionDatabase();
   }, [updateCollectionDatabase]);
 
   //form functions-----------------------------
   const addItem = useCallback(
-    // EWG 10302021:"From" should probably be "Form" :)
-    (outputDataFromLessMessFrom) => {
+    (outputDataFromLessMessForm) => {
       // EWG 10302021: for all callbacks that perform async
       // EWG 10302021: operations the promise should be returned
       // EWG 10302021: so the caller can chain off of it
-      return returnAddedItemToDatabase(outputDataFromLessMessFrom).then(
+      return returnAddedItemToDatabase(outputDataFromLessMessForm).then(
         updateCollectionDatabase
       );
 
@@ -54,14 +52,14 @@ export const LessMess = () => {
       // if (newItems.length !== 0) {
       // setNewItems(
       //   newItems.concat({
-      //     ...outputDataFromLessMessFrom,
+      //     ...outputDataFromLessMessForm,
       //     id: Math.max(0, ...newItems.map((c) => c.id)) + 1, //ZZ solution2 to -infinity with the spread operator:Math.max(0, ...)
       //   })
       // );
       // } else {
       //   setNewItems(
       //     newItems.concat({
-      //       ...outputDataFromLessMessFrom,
+      //       ...outputDataFromLessMessForm,
       //       id: 1,
       //     })
       //   );
@@ -80,9 +78,7 @@ export const LessMess = () => {
     [updateCollectionDatabase]
   );
 
-  // EWG 10302021: the suffix "Arr" is a little confusing
-  // EWG 10302021: the plural "Items" is a little confusing too since only one item is being replaced 
-  const replaceItemsArr = useCallback(
+  const replaceItem = useCallback(
     (item) => {
       // EWG 10302021: for all callbacks that perform async
       // EWG 10302021: operations the promise should be returned
@@ -105,7 +101,7 @@ export const LessMess = () => {
         editItemID={editItemID}
         onDeleteItem={deleteItem}
         onEditItem={setEditItemID}
-        onSaveItem={replaceItemsArr}
+        onSaveItem={replaceItem}
         onCancelItem={cancelItem}
       />
       <LessMessForm
