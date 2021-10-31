@@ -102,6 +102,7 @@ export const EditTableRow = ({
         />
       </td>
       <td>
+        {/* EWG 10302021: consider making this a textarea, so it is easier to add more comments */}
         <input
           id="edit-more-input"
           type="text"

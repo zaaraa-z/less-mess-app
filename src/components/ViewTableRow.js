@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { itemsPropType } from '../propTypes/itemsPropType';
 
+// EWG 10302021: Need to fix the casing of "ViewtableRow"
 export const ViewtableRow = ({
   item,
   onDeleteItem: deleteItem,

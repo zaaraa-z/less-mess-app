@@ -25,10 +25,13 @@ export const LessMess = () => {
   }, [defaultFocusedInputRef]);
 
   const updateCollectionDatabase = useCallback(() => {
-    returnAllItemsInDatabase().then((items) => {
-      setNewItems(items);
-      resetAfterClickingCancel();
-    });
+      // EWG 10302021: for all callbacks that perform async
+      // EWG 10302021: operations the promise should be returned
+      // EWG 10302021: so the caller can chain off of it
+      return returnAllItemsInDatabase().then((items) => {
+        setNewItems(items);
+        resetAfterClickingCancel();
+      });
   }, [resetAfterClickingCancel]);
 
   //initialize items on the state after having retrieved them from actual service
@@ -38,8 +41,12 @@ export const LessMess = () => {
 
   //form functions-----------------------------
   const addItem = useCallback(
+    // EWG 10302021:"From" should probably be "Form" :)
     (outputDataFromLessMessFrom) => {
-      returnAddedItemToDatabase(outputDataFromLessMessFrom).then(
+      // EWG 10302021: for all callbacks that perform async
+      // EWG 10302021: operations the promise should be returned
+      // EWG 10302021: so the caller can chain off of it
+      return returnAddedItemToDatabase(outputDataFromLessMessFrom).then(
         updateCollectionDatabase
       );
 
@@ -65,13 +72,21 @@ export const LessMess = () => {
 
   const deleteItem = useCallback(
     (itemId) => {
-      deleteItemInDatabase(itemId).then(updateCollectionDatabase);
+      // EWG 10302021: for all callbacks that perform async
+      // EWG 10302021: operations the promise should be returned
+      // EWG 10302021: so the caller can chain off of it
+      return deleteItemInDatabase(itemId).then(updateCollectionDatabase);
     },
     [updateCollectionDatabase]
   );
 
+  // EWG 10302021: the suffix "Arr" is a little confusing
+  // EWG 10302021: the plural "Items" is a little confusing too since only one item is being replaced 
   const replaceItemsArr = useCallback(
     (item) => {
+      // EWG 10302021: for all callbacks that perform async
+      // EWG 10302021: operations the promise should be returned
+      // EWG 10302021: so the caller can chain off of it
       returnEditedItemInDatabase(item).then(updateCollectionDatabase);
     },
     [updateCollectionDatabase]
