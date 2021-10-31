@@ -7,7 +7,8 @@ export const useForm = (initialForm) => {
     setFrom({
       ...form,
       // EWG 10302021: Number works but I have found that parseInt or parseFloat works better
-      [name]: type === 'number' ? Number(value) : value,
+      // [name]: type === 'number' ? Number(value) : value,
+      [name]: type === 'number' ? parseInt(value) : value,
     });
   };
 
