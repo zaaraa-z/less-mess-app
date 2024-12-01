@@ -1,6 +1,6 @@
 
 # Zara-LessMess
-"LessMess" App is the initial idea of creating an app to share no-longer-needed items for free, and to live simple. In this app, you can add, delete, and edit thems. All data will be saved in a JSON file as the database using json-server.
+"LessMess" App (built via React.js) is the initial idea of creating an app to share no-longer-needed items for free, and to live simple. In this app, you can add, delete, and edit thems. All data will be saved in a JSON file as the database using json-server.
 
 ## Usage
 Run the React app in local server
