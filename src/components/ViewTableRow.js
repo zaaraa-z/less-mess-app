@@ -20,10 +20,10 @@ export const ViewTableRow = ({
       <td>{item.likeItBecause}</td>
       <td>{item.more}</td>
       <td>
-        <button type="button" onClick={() => deleteItem(item.id)}>
+        <button type='button' onClick={() => deleteItem(item.id)}>
           Delete
         </button>
-        <button type="button" onClick={() => EditItem(item.id)}>
+        <button type='button' onClick={() => EditItem(item.id)}>
           Edit
         </button>
       </td>
@@ -31,7 +31,7 @@ export const ViewTableRow = ({
   );
 };
 
-ViewtableRow.prototype = {
+ViewTableRow.prototype = {
   item: itemsPropType.isRequired,
   onDeleteItem: PropTypes.func.isRequired,
   onEditItem: PropTypes.func.isRequired,

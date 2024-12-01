@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const AppHeader = memo(({ appHeaderText, appSlogan }) => {
   return (
     <header>
-      <img src="../imgs/logo.svg" alt="logo"></img>
+      <img src='../imgs/logo.svg' alt='logo'></img>
       <h1>{appHeaderText}</h1>
       <p>{appSlogan}</p>
     </header>

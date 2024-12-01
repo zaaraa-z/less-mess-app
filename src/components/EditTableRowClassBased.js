@@ -40,9 +40,9 @@ export class EditTableRow extends Component {
         <td>{this.props.item.id}</td>
         <td>
           <input
-            id="edit-item-input"
-            type="text"
-            name="item"
+            id='edit-item-input'
+            type='text'
+            name='item'
             value={this.state.item}
             onChange={this.change}
             ref={this.defaultFocusedInputRef}
@@ -50,27 +50,27 @@ export class EditTableRow extends Component {
         </td>
         <td>
           <input
-            id="edit-material-input"
-            type="text"
-            name="material"
+            id='edit-material-input'
+            type='text'
+            name='material'
             value={this.state.material}
             onChange={this.change}
           />
         </td>
         <td>
           <input
-            id="edit-color-input"
-            type="text"
-            name="color"
+            id='edit-color-input'
+            type='text'
+            name='color'
             value={this.state.color}
             onChange={this.change}
           />
         </td>
         <td>
           <input
-            id="edit-size-input"
-            type="text"
-            name="size"
+            id='edit-size-input'
+            type='text'
+            name='size'
             value={this.state.size}
             onChange={this.change}
           />
@@ -79,8 +79,8 @@ export class EditTableRow extends Component {
           <select
             value={this.state.quality}
             onChange={this.change}
-            name="quality"
-            id="edit-quality-select"
+            name='quality'
+            id='edit-quality-select'
           >
             <option>never used</option>
             <option>perfect</option>
@@ -91,46 +91,46 @@ export class EditTableRow extends Component {
         </td>
         <td>
           <input
-            id="edit-goodFor-input"
-            type="text"
-            name="goodFor"
+            id='edit-goodFor-input'
+            type='text'
+            name='goodFor'
             value={this.state.goodFor}
             onChange={this.change}
           />
         </td>
         <td>
           <input
-            id="edit-date-input"
-            type="number"
-            name="date"
+            id='edit-date-input'
+            type='number'
+            name='date'
             value={this.state.date}
             onChange={this.change}
           />
         </td>
         <td>
           <input
-            id="edit-likeItBecause-input"
-            type="text"
-            name="likeItBecause"
+            id='edit-likeItBecause-input'
+            type='text'
+            name='likeItBecause'
             value={this.state.likeItBecause}
             onChange={this.change}
           />
         </td>
         <td>
           <input
-            id="edit-more-input"
-            type="text"
-            name="more"
+            id='edit-more-input'
+            type='text'
+            name='more'
             value={this.state.more}
             onChange={this.change}
           />
         </td>
 
         <td>
-          <button type="button" onClick={this.props.OncancelItem}>
+          <button type='button' onClick={this.props.OncancelItem}>
             Cancel
           </button>
-          <button type="button" onClick={this.saveItem}>
+          <button type='button' onClick={this.saveItem}>
             Save
           </button>
         </td>

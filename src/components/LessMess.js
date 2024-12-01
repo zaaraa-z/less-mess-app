@@ -95,7 +95,7 @@ export const LessMess = () => {
   //function return----------------------------
   return (
     <>
-      <AppHeader appHeaderText="LessMess!" appSlogan="Items I no longer need" />
+      <AppHeader appHeaderText='LessMess!' appSlogan='Items I no longer need' />
       <LessMessTable
         itemsArr={newItems}
         editItemID={editItemID}
@@ -105,7 +105,7 @@ export const LessMess = () => {
         onCancelItem={cancelItem}
       />
       <LessMessForm
-        btnText="Less Mess!"
+        btnText='Less Mess!'
         onSubmitItem={addItem}
         ref={defaultFocusedInputRef}
       />

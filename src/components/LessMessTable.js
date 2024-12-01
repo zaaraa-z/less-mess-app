@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
 import { itemsPropType } from '../propTypes/itemsPropType';
-import { ViewtableRow } from './ViewTableRow';
+import { ViewTableRow } from './ViewTableRow';
 import { EditTableRow } from './EditTableRow';
 
 export const LessMessTable = memo(
@@ -19,31 +19,31 @@ export const LessMessTable = memo(
           <tr>
             <th>Id</th>
             <th>
-              <label htmlFor="edit-item-input">Item</label>
+              <label htmlFor='edit-item-input'>Item</label>
             </th>
             <th>
-              <label htmlFor="edit-material-input">Material</label>
+              <label htmlFor='edit-material-input'>Material</label>
             </th>
             <th>
-              <label htmlFor="edit-color-input">Color</label>
+              <label htmlFor='edit-color-input'>Color</label>
             </th>
             <th>
-              <label htmlFor="edit-size-input">Size</label>
+              <label htmlFor='edit-size-input'>Size</label>
             </th>
             <th>
-              <label htmlFor="edit-quality-select">Quality</label>
+              <label htmlFor='edit-quality-select'>Quality</label>
             </th>
             <th>
-              <label htmlFor="edit-goodFor-input">Good for</label>
+              <label htmlFor='edit-goodFor-input'>Good for</label>
             </th>
             <th>
-              <label htmlFor="edit-date-input">Date</label>
+              <label htmlFor='edit-date-input'>Date</label>
             </th>
             <th>
-              <label htmlFor="edit-likeItBecause-input">Like it because</label>
+              <label htmlFor='edit-likeItBecause-input'>Like it because</label>
             </th>
             <th>
-              <label htmlFor="edit-more-input">More</label>
+              <label htmlFor='edit-more-input'>More</label>
             </th>
             <th>Actions</th>
           </tr>
@@ -52,7 +52,7 @@ export const LessMessTable = memo(
         <tbody>
           {itemsArr.length === 0 && (
             <tr>
-              <td colSpan="11">There are no items yet.</td>
+              <td colSpan='11'>There are no items yet.</td>
             </tr>
           )}
           {itemsArr.map((item) =>
@@ -64,7 +64,7 @@ export const LessMessTable = memo(
                 onCancelItem={cancelItem}
               />
             ) : (
-              <ViewtableRow
+              <ViewTableRow
                 item={item}
                 key={item.id}
                 onDeleteItem={deleteItem}

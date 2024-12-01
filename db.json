@@ -4,7 +4,7 @@
       "id": 1,
       "item": "shirt",
       "material": "cotton",
-      "color": "dark red",
+      "color": "light red",
       "size": "40",
       "quality": "never used",
       "goodFor": "women",
@@ -22,7 +22,19 @@
       "goodFor": "hot drinks",
       "date": 2015,
       "likeItBecause": "it is funny",
-      "more": "nothing"
+      "more": "-"
+    },
+    {
+      "item": "book",
+      "material": "-",
+      "color": "-",
+      "size": "A4",
+      "quality": "perfect",
+      "goodFor": "all!",
+      "date": 2022,
+      "likeItBecause": "great novel",
+      "more": "-",
+      "id": 3
     }
   ]
 }

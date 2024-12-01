@@ -25,9 +25,9 @@ export const EditTableRow = ({
       <td>{item.id}</td>
       <td>
         <input
-          id="edit-item-input"
-          type="text"
-          name="item"
+          id='edit-item-input'
+          type='text'
+          name='item'
           value={itemForm.item}
           onChange={change}
           ref={defaultFocusedInputRef}
@@ -35,27 +35,27 @@ export const EditTableRow = ({
       </td>
       <td>
         <input
-          id="edit-material-input"
-          type="text"
-          name="material"
+          id='edit-material-input'
+          type='text'
+          name='material'
           value={itemForm.material}
           onChange={change}
         />
       </td>
       <td>
         <input
-          id="edit-color-input"
-          type="text"
-          name="color"
+          id='edit-color-input'
+          type='text'
+          name='color'
           value={itemForm.color}
           onChange={change}
         />
       </td>
       <td>
         <input
-          id="edit-size-input"
-          type="text"
-          name="size"
+          id='edit-size-input'
+          type='text'
+          name='size'
           value={itemForm.size}
           onChange={change}
         />
@@ -64,8 +64,8 @@ export const EditTableRow = ({
         <select
           value={itemForm.quality}
           onChange={change}
-          name="quality"
-          id="edit-quality-select"
+          name='quality'
+          id='edit-quality-select'
         >
           <option>never used</option>
           <option>perfect</option>
@@ -76,46 +76,46 @@ export const EditTableRow = ({
       </td>
       <td>
         <input
-          id="edit-goodFor-input"
-          type="text"
-          name="goodFor"
+          id='edit-goodFor-input'
+          type='text'
+          name='goodFor'
           value={itemForm.goodFor}
           onChange={change}
         />
       </td>
       <td>
         <input
-          id="edit-date-input"
-          type="number"
-          name="date"
+          id='edit-date-input'
+          type='number'
+          name='date'
           value={itemForm.date}
           onChange={change}
         />
       </td>
       <td>
         <input
-          id="edit-likeItBecause-input"
-          type="text"
-          name="likeItBecause"
+          id='edit-likeItBecause-input'
+          type='text'
+          name='likeItBecause'
           value={itemForm.likeItBecause}
           onChange={change}
         />
       </td>
       <td>
         <textarea
-          id="edit-more-input"
-          type="text"
-          name="more"
+          id='edit-more-input'
+          type='text'
+          name='more'
           value={itemForm.more}
           onChange={change}
         />
       </td>
 
       <td>
-        <button type="button" onClick={cancelItem}>
+        <button type='button' onClick={cancelItem}>
           Cancel
         </button>
-        <button type="button" onClick={saveItem}>
+        <button type='button' onClick={saveItem}>
           Save
         </button>
       </td>
